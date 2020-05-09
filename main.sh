@@ -215,9 +215,9 @@ function parse_type10 {
 FIRST=0
 while IFS= read -r line
 do
-    line=`echo $line | sed -e 's/^[[\r\n:space:]]*//'`
+    ltrim=`echo $line | sed -e 's/^[[\r\n:space:]]*//'`
     
-    if [ "$line" = "" ]; then
+    if [ "$ltrim" = "" ]; then
       continue;
     fi
 
